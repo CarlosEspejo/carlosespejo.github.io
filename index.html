@@ -25,11 +25,33 @@
 
     <div class="container">
       <section id="main_content">
-        <h3>Raspberry Pi, Arch Linux and Ruby</h3>
-
-        <p>After you follow the other guides and create the image boot up and resize the partition by using these instructions. 
-        <a href="http://www.raspberrypiforums.com/forums/tutorials/article/7-full-guide-to-arch-linux-on-the-raspberry-pi/" target="_blank">Resize</a></p>
-
+        <h2>Raspberry Pi, Arch Linux and Ruby</h2>
+        <h4>Setup</h4>
+        <p>
+           After you follow the other guides and create the image boot
+           up and <a
+           href="http://www.raspberrypiforums.com/forums/tutorials/article/7-full-guide-to-arch-linux-on-the-raspberry-pi/"
+         target="_blank">resize</a> the partition. Make sure to run
+       <strong>pacman -Syu</strong> to uprade everything.
+        </p>
+        <div>
+        </div>
+        <p>
+            install <a href='http://elinux.org/ArchLinux_Install_Guide'>sudo</a> and make a new user.
+        </p>
+        <h4>Wifi</h4>
+        <p>
+          Nothing beats the Arch Linux Wiki its packed with useful information about how to configure everything.
+          For wifi i used <a href='https://wiki.archlinux.org/index.php/Netcfg'>Netcfg</a>
+        </p>
+        <h4>Ruby</h4>
+        <p>
+        <a href='https://wiki.archlinux.org/index.php/Ruby#Ruby_2.0'>link</a><br/>
+        <strong>pacman -S ruby</strong>
+        add this to your PATH variable <br/>$(ruby -rubygems -e "puts
+        Gem.user_dir")/bin<br/>
+        export GEM_HOME=$HOME/.gem/ruby/2.0.0
+        </p>
       </section>
     </div>
   </body>
