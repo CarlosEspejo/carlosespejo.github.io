@@ -1,58 +1,16 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+---
+layout: default
+---
 
-    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
-    <title>#{Carlos_Espejo} by Carlos Espejo</title>
-  </head>
+<h1 class="page-heading">Posts</h1>
+<ul class="post-list">
+{% for post in site.posts %}
+  <li>
+    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-  <body>
-
-    <header>
-      <div class="container">
-        <h1>#{Carlos_Espejo}</h1>
-        <h2>Rubyist</h2>
-
-        <section id="downloads">
-          <a href="https://github.com/CarlosEspejo" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
-        <h2>Raspberry Pi, Arch Linux and Ruby</h2>
-        <h4>Setup</h4>
-        <p>
-           After you follow the other guides and create the image boot
-           up and <a
-           href="http://www.raspberrypiforums.com/forums/tutorials/article/7-full-guide-to-arch-linux-on-the-raspberry-pi/"
-         target="_blank">resize</a> the partition. Make sure to run
-       <strong>pacman -Syu</strong> to uprade everything.
-        </p>
-        <div>
-        </div>
-        <p>
-            install <a href='http://elinux.org/ArchLinux_Install_Guide'>sudo</a> and make a new user.
-        </p>
-        <h4>Wifi</h4>
-        <p>
-          Nothing beats the Arch Linux Wiki its packed with useful information about how to configure everything.
-          For wifi i used <a href='https://wiki.archlinux.org/index.php/Netcfg'>Netcfg</a>
-        </p>
-        <h4>Ruby</h4>
-        <p>
-        <a href='https://wiki.archlinux.org/index.php/Ruby#Ruby_2.0'>link</a><br/>
-        <strong>pacman -S ruby</strong>
-        add this to your PATH variable <br/>$(ruby -rubygems -e "puts
-        Gem.user_dir")/bin<br/>
-        export GEM_HOME=$HOME/.gem/ruby/2.0.0
-        </p>
-      </section>
-    </div>
-  </body>
-</html>
+    <h2>
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </h2>
+  </li>
+ {% endfor %}
+</ul>
