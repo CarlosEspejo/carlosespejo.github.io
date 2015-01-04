@@ -2,7 +2,7 @@
 layout: post
 title:  "Raspberry Pi, Arch Linux and Ruby"
 date:   2014-01-15 21:22:42
-categories: raspberrypi arch-linux
+tags: raspberrypi arch-linux
 ---
 
 ###Setup
