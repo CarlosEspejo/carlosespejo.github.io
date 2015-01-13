@@ -45,6 +45,14 @@ curl -L http://install.ohmyz.sh | sh
 chsh -s /bin/zsh
 ```
 
+#### rbenv
+
+```bash
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+
+```
+
 #### Install Ruby
 ```bash
 rbenv install 2.2.0
