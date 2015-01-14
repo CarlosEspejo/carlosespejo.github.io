@@ -34,7 +34,8 @@ Command Line Developer Tools (OS X 10.10)
 Open a terminal and run `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”`
 
 ```bash
-brew install git openssl imagemagick rbenv ruby-build rbenv-gem-rehash libxml2 libxslt automake
+brew install git openssl imagemagick rbenv ruby-build \
+             rbenv-gem-rehash libxml2 libxslt automake ssh-copy-id graphviz
 ```
 
 #### Oh My ZSH!
@@ -78,6 +79,7 @@ alias stop_pg="pg_ctl -D $PGDATA stop -m fast"
 ```
 
 #### Other Development Apps
+  * Sublime Text
   * Slack
   * HipChat
   * Dash
