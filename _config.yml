@@ -1,3 +1,10 @@
 name: '#{Carlos_Espejo}'
-markdown: kramdown
-highlighter: rouge
+github: [metadata]
+kramdown:
+  input: GFM
+  hard_wrap: false
+gems:
+  - jekyll-coffeescript
+  - jekyll-paginate
+  - jemoji
+  - jekyll-mentions
