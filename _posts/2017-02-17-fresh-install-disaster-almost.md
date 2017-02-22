@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Fresh install disaster (almost)
+title: How I Almost Lost All My Data and Was Rescued by Spinrite
 tags: install spinrite macOS
 ---
 ![Image by Apple](/images/macos-sierra-time-machine-preferences.png)
@@ -11,6 +11,6 @@ I proceeded to wipe my mac and start the install. When it was time to restore fr
 
 As I cried inside I remembered that I purchased spinrite many years ago, just in case. With the help of the [ifixit](https://www.ifixit.com/Guide/Apple+Time+Capsule+Model+A1302+Hard+Drive+Replacement/2750) site I had the drive out of the time capsule in no time and spinrite working on it.
 
-When level two finished it didn't find any issues but when I plugged the drive back in I was able to access my backups. Huge disaster adverted once again because of [Spinrite](https://www.grc.com/sr/spinrite.htm).
+When Spinrite finished running level two, it didn't find any issues. But when I plugged the drive back into the Time Capsule, I was successful in restoring my files. What started as a disastrous data loss for me. Became another [Spinrite](https://www.grc.com/sr/spinrite.htm) saves the day story.
 
 After a lesson well learned I applied Leo's 3-2-1 backup strategy. Today my data gets sync to two Drobo's (hence the two local copies). Then gets uploaded offsite to the cloud via [Backblaze](https://secure.backblaze.com/r/01crwd).
