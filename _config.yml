@@ -1,4 +1,5 @@
 name: '#{Carlos_Espejo}'
+timezone: America/New_York
 github: [metadata]
 kramdown:
   input: GFM
@@ -8,3 +9,6 @@ gems:
   - jekyll-paginate
   - jemoji
   - jekyll-mentions
+  - jekyll-feed
+  - jekyll-sitemap
+  
