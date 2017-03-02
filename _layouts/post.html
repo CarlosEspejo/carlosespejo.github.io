@@ -3,7 +3,16 @@ layout: default
 ---
 <h2>{{ page.title }}</h2>
 <a href="{{ site.baseurl }}/">Home</a>
+
 <p class="meta">{{ page.date | date_to_string }}</p>
+<p class="meta">
+  {% assign words = content | number_of_words %}
+  {% if words < 360 %}
+    1 min
+  {% else %}
+    {{ words | divided_by:180 }} mins
+  {% endif %} read
+</p>
 
 <div class="post">
 {{ content }}
