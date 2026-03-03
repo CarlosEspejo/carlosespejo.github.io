@@ -4,6 +4,8 @@ url: https://carlosespejo.com
 github_username: CarlosEspejo
 theme: jekyll-theme-slate
 timezone: America/New_York
+sass:
+  quiet_deps: true
 kramdown:
   input: GFM
   hard_wrap: false
