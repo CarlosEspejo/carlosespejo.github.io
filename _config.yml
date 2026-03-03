@@ -1,4 +1,4 @@
-title: Carlos Espejo
+title: '#{Carlos_Espejo}'
 description: Rubyist
 theme: jekyll-theme-slate
 timezone: America/New_York
@@ -6,8 +6,6 @@ kramdown:
   input: GFM
   hard_wrap: false
 plugins:
-  - jekyll-coffeescript
-  - jekyll-paginate
   - jemoji
   - jekyll-mentions
   - jekyll-feed
