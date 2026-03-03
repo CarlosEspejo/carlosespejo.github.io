@@ -1,5 +1,7 @@
 title: '#{Carlos_Espejo}'
 description: Rubyist
+url: https://carlosespejo.com
+github_username: CarlosEspejo
 theme: jekyll-theme-slate
 timezone: America/New_York
 kramdown:
