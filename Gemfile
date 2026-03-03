@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3"
-gem "minima"
+gem "jekyll-theme-slate"
 gem "webrick"
 
 group :jekyll_plugins do
