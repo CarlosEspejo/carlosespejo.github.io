@@ -1,14 +1,14 @@
-name: '#{Carlos_Espejo}'
+title: '#{Carlos_Espejo}'
+description: Rubyist
+url: https://carlosespejo.com
+github_username: CarlosEspejo
+theme: jekyll-theme-slate
 timezone: America/New_York
-github: [metadata]
 kramdown:
   input: GFM
   hard_wrap: false
-gems:
-  - jekyll-coffeescript
-  - jekyll-paginate
+plugins:
   - jemoji
   - jekyll-mentions
   - jekyll-feed
   - jekyll-sitemap
-  

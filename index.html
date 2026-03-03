@@ -2,15 +2,12 @@
 layout: default
 ---
 
-<h3 class="page-heading">Posts</h3>
-<ul class="post-list">
-{% for post in site.posts %}
+<h3>Posts</h3>
+<ul>
+  {% for post in site.posts %}
   <li>
-    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-    <h5>
-      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    </h5>
+    <span>{{ post.date | date: "%b %-d, %Y" }}</span> &mdash;
+    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
   </li>
- {% endfor %}
+  {% endfor %}
 </ul>

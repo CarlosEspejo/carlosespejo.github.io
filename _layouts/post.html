@@ -1,10 +1,8 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<a href="{{ site.baseurl }}/">Home</a>
-<p class="meta">{{ page.date | date_to_string }}</p>
 
-<div class="post">
+<h2>{{ page.title }}</h2>
+<p><small>{{ page.date | date: "%B %-d, %Y" }}</small></p>
+
 {{ content }}
-</div>
