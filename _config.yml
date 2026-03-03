@@ -1,4 +1,7 @@
 name: '#{Carlos_Espejo}'
+title: '#{Carlos_Espejo}'
+description: Rubyist
+theme: minima
 timezone: America/New_York
 github: [metadata]
 kramdown:
