@@ -1,17 +1,14 @@
-name: '#{Carlos_Espejo}'
-title: '#{Carlos_Espejo}'
+title: Carlos Espejo
 description: Rubyist
 theme: jekyll-theme-slate
 timezone: America/New_York
-github: [metadata]
 kramdown:
   input: GFM
   hard_wrap: false
-gems:
+plugins:
   - jekyll-coffeescript
   - jekyll-paginate
   - jemoji
   - jekyll-mentions
   - jekyll-feed
   - jekyll-sitemap
-  
