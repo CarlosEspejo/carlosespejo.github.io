@@ -4,17 +4,30 @@ title: "Building a Personal Financial Advisor Skill for Claude"
 tags: claude ai personal-finance ramit-sethi
 ---
 
-I've been experimenting with Claude's skill system for a while now, and I recently built one that I'm genuinely excited about: a personal financial advisor skill grounded in Ramit Sethi's *I Will Teach You To Be Rich* philosophy.
-
-You can find it on GitHub: [financial-advisor skill](https://github.com/CarlosEspejo/knowledge-work-plugins/blob/main/plugins/financial-advisor/skills/financial-advisor/SKILL.md)
+Most people know they should be investing. They just don't know where to start — and generic advice ("spend less, save more") doesn't help. I built a Claude skill to fix that: a personal financial advisor grounded in Ramit Sethi's *I Will Teach You To Be Rich* philosophy that gives you a concrete plan, not platitudes.
 
 ## What is a Claude Skill?
 
 Skills are structured prompts that give Claude a specific persona, framework, and operating procedure for a domain. Instead of starting every conversation from scratch, a skill primes Claude with deep context so it can act like a specialist from the first message.
 
+## Try It Yourself
+
+The skill file is [open source on GitHub](https://github.com/CarlosEspejo/knowledge-work-plugins/blob/main/plugins/financial-advisor/skills/financial-advisor/SKILL.md). This works with any Claude account, including the free tier at [claude.ai](https://claude.ai).
+
+1. Open the [raw SKILL.md file](https://raw.githubusercontent.com/CarlosEspejo/knowledge-work-plugins/refs/heads/main/plugins/financial-advisor/skills/financial-advisor/SKILL.md) on GitHub
+2. Select all and copy the contents
+3. Start a new conversation at [claude.ai](https://claude.ai)
+4. Paste the skill content as your first message and send it
+
+Claude will acknowledge the framework and immediately adopt the advisor persona. Then just describe your situation — something like:
+
+> *"I make $5k/month, have $8k in credit card debt, and no investments yet. Where do I start?"*
+
+It'll diagnose your situation, map out a Conscious Spending Plan, and give you a prioritized list of next steps — not a wall of disclaimers.
+
 ## Why Ramit Sethi's Framework?
 
-Most personal finance advice is either too generic ("spend less, save more") or too anxiety-inducing. Ramit's approach is different. It focuses on:
+Most personal finance advice is either too generic or too anxiety-inducing. Ramit's approach is different. It focuses on:
 
 - **Big wins over small cuts** — Negotiating a raise or eliminating high-interest debt moves the needle far more than skipping lattes
 - **Conscious spending** — You don't have to cut everything, just spend intentionally on what you actually value
@@ -49,18 +62,8 @@ The skill also specifically flags 401k loans as something to avoid — they crea
 
 ## How a Session Works
 
-The skill structures each conversation in five steps:
+You describe your situation — income, debt, savings, what's stressing you out — and the advisor takes it from there. It asks clarifying questions to fill in the gaps, then maps your numbers onto the Conscious Spending Plan and tells you exactly where to focus first.
 
-1. Warm greeting and situation assessment
-2. Financial diagnosis
-3. Mapping out the Conscious Spending Plan
-4. Prioritized action items
-5. Follow-up and iteration
+If you're drowning in credit card debt, it won't tell you to max your Roth IRA. If you're leaving employer match on the table, that's the first thing it flags. The advice is sequenced to your actual situation, not a one-size-fits-all checklist.
 
-The tone is direct and warm, not preachy. The goal is specific, actionable advice — not a disclaimer farm.
-
-## Try It Yourself
-
-If you use Claude, you can load the skill and start a conversation about your finances. Whether you're just starting out, dealing with debt, or trying to figure out how to invest, it gives you a structured framework to work through your situation.
-
-The skill file is [open source on GitHub](https://github.com/CarlosEspejo/knowledge-work-plugins/blob/main/plugins/financial-advisor/skills/financial-advisor/SKILL.md). Pull requests welcome.
+The tone is direct and warm, not preachy. The goal is specific, actionable advice — not a disclaimer farm. The skill is open source — pull requests welcome.
