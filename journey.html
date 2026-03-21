@@ -298,16 +298,14 @@ title: My Journey
 </div>
 
 <script>
-(function() {
-  function scaleWrap() {
-    var outer = document.querySelector('.ce-outer');
-    var wrap  = document.querySelector('.ce-wrap');
-    if (!outer || !wrap) return;
-    var scale = outer.offsetWidth / 800;
-    wrap.style.transform = 'scale(' + scale + ')';
-    outer.style.height = (450 * scale) + 'px';
-  }
-  scaleWrap();
-  window.addEventListener('resize', scaleWrap);
-})();
+function scaleWrap() {
+  var outer = document.querySelector('.ce-outer');
+  var wrap  = document.querySelector('.ce-wrap');
+  if (!outer || !wrap) return;
+  var scale = outer.offsetWidth / 800;
+  wrap.style.transform = 'scale(' + scale + ')';
+  outer.style.height = (450 * scale) + 'px';
+}
+window.addEventListener('load', scaleWrap);
+window.addEventListener('resize', scaleWrap);
 </script>
