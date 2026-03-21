@@ -22,7 +22,11 @@ title: My Journey
   background: #000;
   font-family: 'Share Tech Mono', monospace;
   transform-origin: top left;
+  zoom: 0.85; /* desktop: ~680px content area */
 }
+
+@media (max-width: 750px) { .ce-wrap { zoom: 0.55; } }
+@media (max-width: 500px) { .ce-wrap { zoom: 0.41; } }
 
 .ce-crt {
   position: absolute; inset: 0;
@@ -292,21 +296,3 @@ title: My Journey
   </div>
 </div>
 
-<!-- Runs synchronously so clientWidth is available immediately -->
-<script>
-(function () {
-  function scale() {
-    var outer = document.getElementById('ce-outer');
-    var wrap  = document.getElementById('ce-wrap');
-    if (!outer || !wrap) return;
-    var w = outer.clientWidth;
-    if (!w) return;
-    var s = w / 800;
-    wrap.style.transform = 'scale(' + s + ')';
-    wrap.style.transformOrigin = 'top left';
-    outer.style.height = Math.round(450 * s) + 'px';
-  }
-  scale();
-  window.addEventListener('resize', scale);
-}());
-</script>
