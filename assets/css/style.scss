@@ -191,10 +191,6 @@ main.container {
   p {
     font-size: 0.8rem;
     color: $muted;
-
-    &::before {
-      content: "# ";
-    }
   }
 
   a {
