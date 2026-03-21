@@ -14,12 +14,10 @@ Skills are structured prompts that give Claude a specific persona, framework, an
 
 The skill file is [open source on GitHub](https://github.com/CarlosEspejo/knowledge-work-plugins/blob/main/plugins/rich-life/skills/rich-life/SKILL.md). This works with any Claude account, including the free tier at [claude.ai](https://claude.ai).
 
-1. Open the [raw SKILL.md file](https://raw.githubusercontent.com/CarlosEspejo/knowledge-work-plugins/refs/heads/main/plugins/rich-life/skills/rich-life/SKILL.md) on GitHub
-2. Select all and copy the contents
-3. Start a new conversation at [claude.ai](https://claude.ai)
-4. Paste the skill content as your first message and send it
+1. Start a new conversation at [claude.ai](https://claude.ai)
+2. Copy and paste the skill link [SKILL.md](https://raw.githubusercontent.com/CarlosEspejo/knowledge-work-plugins/refs/heads/main/plugins/rich-life/skills/rich-life/SKILL.md) as your first message and send it
 
-Claude will acknowledge the framework and immediately adopt the Rich Life persona. Then just describe your situation — something like:
+Claude will acknowledge the framework by saying something like "I've read the Rich Life skill! I'm now loaded up with Ramit Sethi's philosophy and ready to be your Rich Life coach." Then just describe your situation, something like:
 
 > *"I make $5k/month, have $8k in credit card debt, and no investments yet. Where do I start?"*
 
@@ -54,7 +52,7 @@ One thing I wanted to make sure the skill got right was sequencing. A lot of peo
 
 1. Contribute to your 401k up to the employer match (free money)
 2. Pay off high-interest debt (credit cards)
-3. Max your Roth IRA ($7,000 for 2024–2025)
+3. Max your Roth IRA ($7,000 as of 2024–2025)
 4. Max your 401k ($23,500 for 2025)
 5. Invest in a taxable brokerage (VOO is the default recommendation)
 
@@ -66,4 +64,4 @@ You describe your situation — income, debt, savings, what's stressing you out 
 
 If you're drowning in credit card debt, it won't tell you to max your Roth IRA. If you're leaving employer match on the table, that's the first thing it flags. The advice is sequenced to your actual situation, not a one-size-fits-all checklist.
 
-The tone is direct and warm, not preachy. The goal is specific, actionable advice — not a disclaimer farm. The skill is open source — pull requests welcome.
+The tone is direct and warm, not preachy. The goal is specific, actionable advice — not a disclaimer farm.
