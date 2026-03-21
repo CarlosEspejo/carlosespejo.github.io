@@ -94,9 +94,6 @@ GEM
       jekyll (>= 3.8, < 5.0)
     jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
-    jekyll-theme-slate (0.2.0)
-      jekyll (> 3.5, < 5.0)
-      jekyll-seo-tag (~> 2.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     jemoji (0.13.0)
@@ -187,8 +184,8 @@ DEPENDENCIES
   jekyll (~> 4.3)
   jekyll-feed
   jekyll-mentions
+  jekyll-seo-tag
   jekyll-sitemap
-  jekyll-theme-slate
   jemoji
   webrick
 
@@ -230,7 +227,6 @@ CHECKSUMS
   jekyll-sass-converter (3.1.0) sha256=83925d84f1d134410c11d0c6643b0093e82e3a3cf127e90757a85294a3862443
   jekyll-seo-tag (2.8.0) sha256=3f2ed1916d56f14ebfa38e24acde9b7c946df70cb183af2cb5f0598f21ae6818
   jekyll-sitemap (1.4.0) sha256=0de08c5debc185ea5a8f980e1025c7cd3f8e0c35c8b6ef592f15c46235cf4218
-  jekyll-theme-slate (0.2.0) sha256=5e40909de712bbbefbc7a29f17c55bffa326c222f0a13ee1656229a7d43c3439
   jekyll-watch (2.2.1) sha256=bc44ed43f5e0a552836245a54dbff3ea7421ecc2856707e8a1ee203a8387a7e1
   jemoji (0.13.0) sha256=5d4c3e8e2cbbb2b73997c31294f6f70c94e4d4fade039373e86835bcf5529e7c
   json (2.19.2) sha256=e7e1bd318b2c37c4ceee2444841c86539bc462e81f40d134cf97826cb14e83cf
