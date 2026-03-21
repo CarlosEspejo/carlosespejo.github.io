@@ -104,6 +104,70 @@ main.container {
 }
 
 /* ============================================================
+   Nav
+   ============================================================ */
+
+.site-nav {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 1.25rem;
+
+  a {
+    font-family: $font-mono;
+    font-size: 0.8rem;
+    color: #aaaaaa;
+    text-decoration: none;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}
+
+/* ============================================================
+   Home links
+   ============================================================ */
+
+.home-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 3rem;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-link {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  border: 1px solid $border;
+  border-radius: 6px;
+  text-decoration: none;
+  background: $code-bg;
+  transition: border-color 0.15s;
+
+  &:hover {
+    border-color: $accent;
+  }
+
+  .home-link-title {
+    font-weight: 700;
+    color: $text;
+    font-size: 0.9375rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .home-link-desc {
+    font-size: 0.8125rem;
+    color: $muted;
+    line-height: 1.5;
+  }
+}
+
+/* ============================================================
    Footer
    ============================================================ */
 

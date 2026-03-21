@@ -2,6 +2,17 @@
 layout: default
 ---
 
+<div class="home-links">
+  <a href="{{ '/journey' | relative_url }}" class="home-link">
+    <span class="home-link-title">My Journey</span>
+    <span class="home-link-desc">From first-gen college student to tech professional</span>
+  </a>
+  <a href="{{ '/list' | relative_url }}" class="home-link">
+    <span class="home-link-title">Carlos List</span>
+    <span class="home-link-desc">Books, training platforms, and what I'm learning now</span>
+  </a>
+</div>
+
 <p class="post-list-heading">Posts</p>
 <ul class="post-list">
   {% for post in site.posts %}
