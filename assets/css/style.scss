@@ -125,6 +125,23 @@ main.container {
 }
 
 /* ============================================================
+   Home intro
+   ============================================================ */
+
+.home-intro {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $border;
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: $text;
+    margin-bottom: 0;
+  }
+}
+
+/* ============================================================
    Home links
    ============================================================ */
 
