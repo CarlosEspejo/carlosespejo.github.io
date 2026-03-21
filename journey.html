@@ -11,6 +11,7 @@ title: My Journey
   background: #000;
   border-radius: 6px;
   overflow: hidden;
+  position: relative;
 }
 
 .ce-wrap {
@@ -21,16 +22,6 @@ title: My Journey
   background: #000;
   font-family: 'Share Tech Mono', monospace;
   transform-origin: top left;
-  /* Scale to fit container on all screen sizes */
-  zoom: 0.85; /* desktop: 680px content area */
-}
-
-@media (max-width: 750px) {
-  .ce-wrap { zoom: 0.55; }
-}
-
-@media (max-width: 500px) {
-  .ce-wrap { zoom: 0.41; }
 }
 
 .ce-crt {
@@ -54,6 +45,7 @@ title: My Journey
   border-bottom: 1px solid rgba(0,255,80,0.2);
   padding-bottom: 4px; margin-bottom: 7px;
   animation: ce-fadeIn 0.3s ease-out both;
+  overflow: hidden;
 }
 
 .ce-bios-right {
@@ -68,11 +60,13 @@ title: My Journey
   letter-spacing: 2px;
   text-shadow: 0 0 10px rgba(0,255,80,0.5);
   line-height: 1;
+  white-space: nowrap;
 }
 
 .ce-bios-sub {
   font-size: 11px; color: rgba(0,255,80,0.5);
   margin-top: 3px; letter-spacing: 1px;
+  white-space: nowrap;
 }
 
 .ce-boot-lines { flex: 1; display: flex; flex-direction: column; }
@@ -84,6 +78,7 @@ title: My Journey
   color: rgba(0,255,80,0.85);
   line-height: 1.6;
   animation: ce-lineIn 0.1s ease-out forwards;
+  white-space: nowrap;
 }
 
 .ce-line.l1 { animation-delay: 0.4s; }
@@ -98,16 +93,17 @@ title: My Journey
 @keyframes ce-lineIn { to { opacity: 1; } }
 
 .ce-label { color: rgba(0,255,80,0.5); min-width: 260px; }
-.ce-dots  { color: rgba(0,255,80,0.3); flex: 1; overflow: hidden; white-space: nowrap; }
+.ce-dots  { color: rgba(0,255,80,0.3); flex: 1; overflow: hidden; }
 
-.ce-ok   { color: #00ff50; font-weight: bold; text-shadow: 0 0 8px rgba(0,255,80,0.7); white-space: nowrap; }
-.ce-warn { color: #ffcc00; text-shadow: 0 0 6px rgba(255,200,0,0.5); white-space: nowrap; }
-.ce-info { color: #00bfff; text-shadow: 0 0 6px rgba(0,191,255,0.4); white-space: nowrap; }
+.ce-ok   { color: #00ff50; font-weight: bold; text-shadow: 0 0 8px rgba(0,255,80,0.7); }
+.ce-warn { color: #ffcc00; text-shadow: 0 0 6px rgba(255,200,0,0.5); }
+.ce-info { color: #00bfff; text-shadow: 0 0 6px rgba(0,191,255,0.4); }
 
 .ce-bar-wrap {
   display: flex; align-items: center; gap: 6px;
   opacity: 0;
   animation: ce-lineIn 0.1s ease-out forwards;
+  white-space: nowrap;
 }
 
 .ce-bar-wrap.b1 { animation-delay: 0.5s; }
@@ -158,6 +154,7 @@ title: My Journey
   animation: ce-lineIn 0.3s ease-out 7.2s forwards;
   background: rgba(0,255,80,0.05);
   box-shadow: 0 0 20px rgba(0,255,80,0.1);
+  white-space: nowrap;
 }
 
 .ce-final-name {
@@ -181,8 +178,8 @@ title: My Journey
 @keyframes ce-fadeIn { from { opacity: 0; } to { opacity: 1; } }
 </style>
 
-<div class="ce-outer">
-  <div class="ce-wrap">
+<div class="ce-outer" id="ce-outer">
+  <div class="ce-wrap" id="ce-wrap">
     <div class="ce-crt"></div>
     <div class="ce-scanlines"></div>
 
@@ -191,7 +188,7 @@ title: My Journey
       <div class="ce-bios-header">
         <span class="ce-bios-right">BIOS v2026.03<br>MEM: 32GB OK</span>
         <div class="ce-bios-title">ESPEJO SYSTEMS BIOS</div>
-        <div class="ce-bios-sub">CARLOS ESPEJO — PERSONAL RUNTIME INITIALIZATION</div>
+        <div class="ce-bios-sub">CARLOS ESPEJO &mdash; PERSONAL RUNTIME INITIALIZATION</div>
       </div>
 
       <div class="ce-boot-lines">
@@ -287,11 +284,29 @@ title: My Journey
       </div>
 
       <div class="ce-final-banner">
-        <div class="ce-final-name">CARLOS ESPEJO v2026 — READY<span class="ce-cursor"></span></div>
-        <div class="ce-final-status">▶ SYSTEM OPERATIONAL · NYC</div>
+        <div class="ce-final-name">CARLOS ESPEJO v2026 &mdash; READY<span class="ce-cursor"></span></div>
+        <div class="ce-final-status">&#9658; SYSTEM OPERATIONAL &middot; NYC</div>
       </div>
 
     </div>
   </div>
 </div>
 
+<!-- Runs synchronously so clientWidth is available immediately -->
+<script>
+(function () {
+  function scale() {
+    var outer = document.getElementById('ce-outer');
+    var wrap  = document.getElementById('ce-wrap');
+    if (!outer || !wrap) return;
+    var w = outer.clientWidth;
+    if (!w) return;
+    var s = w / 800;
+    wrap.style.transform = 'scale(' + s + ')';
+    wrap.style.transformOrigin = 'top left';
+    outer.style.height = Math.round(450 * s) + 'px';
+  }
+  scale();
+  window.addEventListener('resize', scale);
+}());
+</script>
