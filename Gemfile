@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3"
+gem "jekyll-theme-slate"
 gem "webrick"
 
 group :jekyll_plugins do
@@ -8,5 +9,4 @@ group :jekyll_plugins do
   gem "jekyll-mentions"
   gem "jekyll-feed"
   gem "jekyll-sitemap"
-  gem "jekyll-seo-tag"
 end
