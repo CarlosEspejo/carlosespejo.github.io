@@ -292,15 +292,16 @@ function scaleWrap() {
   var outer = document.querySelector('.ce-outer');
   var wrap = document.querySelector('.ce-wrap');
   if (!outer || !wrap) return;
-  var w = Math.floor(outer.getBoundingClientRect().width);
-  var scale = w / 800;
-  wrap.style.width = '800px';
+  // Account for container padding (1.5rem each side = 48px) and max-width 680px
+  var available = Math.min(window.innerWidth - 48, 680);
+  var scale = available / 800;
   wrap.style.transformOrigin = 'top left';
   wrap.style.transform = 'scale(' + scale + ')';
   outer.style.height = Math.round(450 * scale) + 'px';
-  outer.style.overflow = 'hidden';
 }
-window.addEventListener('load', scaleWrap);
+window.addEventListener('load', function() {
+  scaleWrap();
+  setTimeout(scaleWrap, 100); // re-run after fonts load
+});
 window.addEventListener('resize', scaleWrap);
-document.addEventListener('DOMContentLoaded', scaleWrap);
 </script>
