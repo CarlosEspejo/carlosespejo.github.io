@@ -7,11 +7,13 @@ title: My Journey
 
 <style>
 .ce-outer {
-  width: 100%;
   background: #000;
-  border-radius: 6px;
   overflow: hidden;
   position: relative;
+  border-radius: 6px;
+  /* desktop */
+  width: 100%;
+  zoom: 0.85;
 }
 
 .ce-wrap {
@@ -21,12 +23,22 @@ title: My Journey
   overflow: hidden;
   background: #000;
   font-family: 'Share Tech Mono', monospace;
-  transform-origin: top left;
-  zoom: 0.85; /* desktop: ~680px content area */
 }
 
-@media (max-width: 750px) { .ce-wrap { zoom: 0.55; } }
-@media (max-width: 500px) { .ce-wrap { zoom: 0.41; } }
+/* Tablet */
+@media (max-width: 750px) {
+  .ce-outer { zoom: 0.6; }
+}
+
+/* Mobile: go full-bleed to maximize space */
+@media (max-width: 500px) {
+  .ce-outer {
+    zoom: 0.49;
+    border-radius: 0;
+    margin-left: -1.5rem;
+    width: calc(100% + 3rem);
+  }
+}
 
 .ce-crt {
   position: absolute; inset: 0;
