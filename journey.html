@@ -8,7 +8,6 @@ title: My Journey
 <style>
 .ce-outer {
   width: 100%;
-  position: relative;
   background: #000;
   border-radius: 6px;
   overflow: hidden;
@@ -22,6 +21,16 @@ title: My Journey
   background: #000;
   font-family: 'Share Tech Mono', monospace;
   transform-origin: top left;
+  /* Scale to fit container on all screen sizes */
+  zoom: 0.85; /* desktop: 680px content area */
+}
+
+@media (max-width: 750px) {
+  .ce-wrap { zoom: 0.55; }
+}
+
+@media (max-width: 500px) {
+  .ce-wrap { zoom: 0.41; }
 }
 
 .ce-crt {
@@ -286,17 +295,3 @@ title: My Journey
   </div>
 </div>
 
-<script>
-function scaleWrap() {
-  var wrap = document.querySelector('.ce-wrap');
-  if (!wrap) return;
-  var available = Math.min(window.innerWidth - 48, 680);
-  var scale = available / 800;
-  wrap.style.zoom = scale;
-}
-window.addEventListener('load', function() {
-  scaleWrap();
-  setTimeout(scaleWrap, 200);
-});
-window.addEventListener('resize', scaleWrap);
-</script>
