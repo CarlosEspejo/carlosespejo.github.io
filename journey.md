@@ -5,4 +5,6 @@ title: My Journey
 
 # My Journey
 
-*Coming soon.*
+![Espejo Systems BIOS]({{ '/assets/carlos-journey-h.gif' | relative_url }})
+
+*Content coming soon.*
