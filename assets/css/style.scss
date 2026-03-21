@@ -95,11 +95,6 @@ main.container {
     font-size: 0.8rem;
     color: $muted;
     margin-top: 0.35rem;
-
-    &::before {
-      content: "# ";
-      color: darken($muted, 10%);
-    }
   }
 }
 
@@ -129,8 +124,8 @@ main.container {
    ============================================================ */
 
 .home-intro {
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
   border-bottom: 1px solid $border;
 
   p {
@@ -148,8 +143,8 @@ main.container {
 .home-links {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 3rem;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
@@ -159,22 +154,23 @@ main.container {
 .home-link {
   display: flex;
   flex-direction: column;
-  padding: 1.25rem;
+  padding: 1rem 1rem 1rem 1.25rem;
   border: 1px solid $border;
-  border-radius: 6px;
+  border-left: 3px solid $accent;
+  border-radius: 4px;
   text-decoration: none;
   background: $code-bg;
-  transition: border-color 0.15s;
+  transition: background 0.15s;
 
   &:hover {
-    border-color: $accent;
+    background: darken($code-bg, 3%);
   }
 
   .home-link-title {
     font-weight: 700;
     color: $text;
     font-size: 0.9375rem;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.25rem;
   }
 
   .home-link-desc {
