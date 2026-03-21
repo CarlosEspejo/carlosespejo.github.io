@@ -8,12 +8,10 @@ title: My Journey
 <style>
 .ce-outer {
   background: #000;
-  overflow: hidden;
   position: relative;
   border-radius: 6px;
-  /* desktop */
+  overflow: hidden;
   width: 100%;
-  zoom: 0.85;
 }
 
 .ce-wrap {
@@ -23,21 +21,22 @@ title: My Journey
   overflow: hidden;
   background: #000;
   font-family: 'Share Tech Mono', monospace;
+  zoom: 0.85; /* desktop: fits 680px container */
 }
 
 /* Tablet */
 @media (max-width: 750px) {
-  .ce-outer { zoom: 0.6; }
+  .ce-wrap { zoom: 0.6; }
 }
 
-/* Mobile: go full-bleed to maximize space */
+/* Mobile: full-bleed, zoom to fill phone width */
 @media (max-width: 500px) {
   .ce-outer {
-    zoom: 0.49;
     border-radius: 0;
     margin-left: -1.5rem;
     width: calc(100% + 3rem);
   }
+  .ce-wrap { zoom: 0.49; }
 }
 
 .ce-crt {
