@@ -6,31 +6,24 @@ title: My Journey
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
 
 <style>
-.ce-wrap {
-  width: 800px;
-  height: 450px;
-  max-width: 100%;
-  aspect-ratio: 16/9;
-  position: relative;
-  overflow: hidden;
-  background: #000;
-  font-family: 'Share Tech Mono', monospace;
-  transform-origin: top left;
-}
-
 .ce-outer {
   width: 100%;
   max-width: 800px;
-  aspect-ratio: 16/9;
   position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
   overflow: hidden;
 }
 
-.ce-outer .ce-wrap {
+.ce-wrap {
   position: absolute;
   top: 0; left: 0;
-  width: 800px; height: 450px;
+  width: 800px;
+  height: 450px;
+  background: #000;
+  font-family: 'Share Tech Mono', monospace;
   transform-origin: top left;
+  overflow: hidden;
 }
 
 .ce-crt {
@@ -302,9 +295,9 @@ function scaleWrap() {
   var outer = document.querySelector('.ce-outer');
   var wrap  = document.querySelector('.ce-wrap');
   if (!outer || !wrap) return;
-  var scale = outer.offsetWidth / 800;
+  var w = outer.getBoundingClientRect().width;
+  var scale = w / 800;
   wrap.style.transform = 'scale(' + scale + ')';
-  outer.style.height = (450 * scale) + 'px';
 }
 window.addEventListener('load', scaleWrap);
 window.addEventListener('resize', scaleWrap);
