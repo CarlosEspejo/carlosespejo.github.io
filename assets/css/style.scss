@@ -171,14 +171,14 @@ a {
   }
 }
 
-strong { font-weight: 700; color: #f3f4f6; }
-em     { font-style: italic; color: $muted; }
+strong { font-weight: 700; color: $text; }
+em     { font-style: italic; }
 
 blockquote {
   border-left: 2px solid $accent;
   padding: 0.25rem 0 0.25rem 1.25rem;
   margin: 1.5rem 0;
-  color: $muted;
+  color: $text;
 
   p { margin-bottom: 0; }
 }
@@ -194,7 +194,7 @@ hr {
    ============================================================ */
 
 ul, ol {
-  padding-left: 1.5rem;
+  padding-left: 2rem;
   margin-bottom: 1.25rem;
 
   li {
@@ -346,7 +346,7 @@ img {
     margin-top: 0;
     font-size: 1.5rem;
 
-    &::before { content: "# "; color: $muted; }
+    &::before { content: none; }
   }
 
   .post-meta {
