@@ -2,7 +2,6 @@ title: '#{Carlos_Espejo}'
 description: Builder of things
 url: https://carlosespejo.com
 github_username: CarlosEspejo
-theme: jekyll-theme-slate
 timezone: America/New_York
 sass:
   quiet_deps: true
@@ -14,3 +13,4 @@ plugins:
   - jekyll-mentions
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
