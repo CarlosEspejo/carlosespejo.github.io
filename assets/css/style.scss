@@ -5,14 +5,15 @@
    Variables
    ============================================================ */
 
-$bg:        #1e1e1e;
-$text:      #e8e8e8;
-$muted:     #8a9ab0;
-$accent:    #f59e0b;
-$header-bg: #252525;
-$border:    #333333;
-$code-bg:   #2a2a2a;
+$bg:        #faf7f2;
+$text:      #1c1c1c;
+$muted:     #7a7a7a;
+$accent:    #c97d0a;
+$header-bg: #1c1c1c;
+$border:    #e0dbd2;
+$code-bg:   #f0ece4;
 
+$font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 $font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 
 $max-width: 680px;
@@ -35,8 +36,8 @@ html {
 body {
   background: $bg;
   color: $text;
-  font-family: $font-mono;
-  font-size: 0.9375rem;
+  font-family: $font-sans;
+  font-size: 1.0625rem;
   line-height: 1.8;
   min-height: 100vh;
   display: flex;
