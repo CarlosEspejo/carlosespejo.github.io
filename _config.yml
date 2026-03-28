@@ -1,8 +1,7 @@
-title: '#{Carlos_Espejo}'
-description: Builder of things
+title: Carlos Espejo
+description: Building at the intersection of AI agents and DevOps
 url: https://carlosespejo.com
 github_username: CarlosEspejo
-theme: jekyll-theme-slate
 timezone: America/New_York
 sass:
   quiet_deps: true
@@ -14,3 +13,4 @@ plugins:
   - jekyll-mentions
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag

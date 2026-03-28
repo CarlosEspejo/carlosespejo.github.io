@@ -1,4 +1,437 @@
 ---
 ---
 
-@use "jekyll-theme-slate";
+/* ============================================================
+   Variables
+   ============================================================ */
+
+$bg:        #faf7f2;
+$text:      #1c1c1c;
+$muted:     #7a7a7a;
+$accent:    #c97d0a;
+$header-bg: #1c1c1c;
+$border:    #e0dbd2;
+$code-bg:   #f0ece4;
+
+$font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+$max-width: 800px;
+
+/* ============================================================
+   Reset & Base
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: $bg;
+  color: $text;
+  font-family: $font-sans;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   Layout
+   ============================================================ */
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+main.container {
+  flex: 1;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+/* ============================================================
+   Header
+   ============================================================ */
+
+.site-header {
+  background: $header-bg;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid $border;
+
+  .site-title {
+    font-family: $font-mono;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $accent;
+    text-decoration: none;
+
+    &::before {
+      content: "~/";
+      color: $muted;
+    }
+
+    &::after {
+      content: " $";
+      color: $muted;
+    }
+
+    &:hover {
+      color: #fbbf24;
+    }
+  }
+
+  .site-description {
+    font-size: 0.8rem;
+    color: $muted;
+    margin-top: 0.35rem;
+  }
+}
+
+/* ============================================================
+   Nav
+   ============================================================ */
+
+.site-nav {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 1.25rem;
+
+  a {
+    font-family: $font-mono;
+    font-size: 0.8rem;
+    color: #aaaaaa;
+    text-decoration: none;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}
+
+/* ============================================================
+   Home intro
+   ============================================================ */
+
+.home-intro {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid $border;
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: $text;
+    margin-bottom: 0;
+  }
+}
+
+/* ============================================================
+   Home links
+   ============================================================ */
+
+.home-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-link {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem 1rem 1.25rem;
+  border: 1px solid $border;
+  border-left: 3px solid $accent;
+  border-radius: 4px;
+  text-decoration: none;
+  background: $code-bg;
+  transition: background 0.15s;
+
+  &:hover {
+    background: #e7e2d7;
+  }
+
+  .home-link-title {
+    font-weight: 700;
+    color: $text;
+    font-size: 0.9375rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .home-link-desc {
+    font-size: 0.8125rem;
+    color: $muted;
+    line-height: 1.5;
+  }
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+
+.site-footer {
+  border-top: 1px solid $border;
+  padding: 1.5rem 0;
+
+  p {
+    font-size: 0.8rem;
+    color: $muted;
+  }
+
+  a {
+    color: $muted;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}
+
+/* ============================================================
+   Typography
+   ============================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-mono;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: $text;
+}
+
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.25rem; }
+h3 { font-size: 1.05rem; }
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+a {
+  color: $accent;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+
+  &:hover {
+    color: #fbbf24;
+  }
+}
+
+strong { font-weight: 700; color: $text; }
+em     { font-style: italic; }
+
+blockquote {
+  border-left: 2px solid $accent;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  margin: 1.5rem 0;
+  color: $text;
+
+  p { margin-bottom: 0; }
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $border;
+  margin: 2.5rem 0;
+}
+
+/* ============================================================
+   Lists
+   ============================================================ */
+
+ul, ol {
+  padding-left: 2rem;
+  margin-bottom: 1.25rem;
+
+  li {
+    margin-bottom: 0.35rem;
+  }
+}
+
+/* ============================================================
+   Code
+   ============================================================ */
+
+code {
+  font-family: $font-mono;
+  font-size: 0.875em;
+  background: $code-bg;
+  color: $accent;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  border: 1px solid $border;
+}
+
+pre {
+  background: $code-bg;
+  border: 1px solid $border;
+  border-radius: 4px;
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+
+  code {
+    background: none;
+    border: none;
+    padding: 0;
+    color: $text;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+}
+
+/* ============================================================
+   Tables
+   ============================================================ */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+
+  th {
+    background: $code-bg;
+    font-weight: 700;
+    text-align: left;
+    padding: 0.5rem 0.875rem;
+    border: 1px solid $border;
+    color: $accent;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  td {
+    padding: 0.5rem 0.875rem;
+    border: 1px solid $border;
+    vertical-align: top;
+  }
+
+  tr:nth-child(even) td {
+    background: $code-bg;
+  }
+}
+
+/* ============================================================
+   Images
+   ============================================================ */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+  border: 1px solid $border;
+}
+
+/* ============================================================
+   Post list (homepage)
+   ============================================================ */
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid $border;
+    margin: 0;
+
+    &:first-child {
+      border-top: 1px solid $border;
+    }
+  }
+
+  .post-date {
+    font-size: 0.8rem;
+    color: $muted;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  a {
+    color: $text;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}
+
+.post-list-heading {
+  font-size: 0.75rem;
+  font-family: $font-mono;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $muted;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* ============================================================
+   Post page
+   ============================================================ */
+
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid $border;
+
+  h1 {
+    margin-top: 0;
+    font-size: 1.5rem;
+
+    &::before { content: none; }
+  }
+
+  .post-meta {
+    font-family: $font-mono;
+    font-size: 0.8rem;
+    color: $muted;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 600px) {
+  .post-list li {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} // Carlos Espejo{% else %}Carlos Espejo{% endif %}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% feed_meta %}
+  {% seo %}
+  {% include head-custom.html %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="{{ '/' | relative_url }}" class="site-title">{{ site.github_username }}</a>
+      <p class="site-description">{{ site.description }}</p>
+      <nav class="site-nav">
+        <a href="{{ '/journey' | relative_url }}">My Journey</a>
+        <a href="{{ '/list' | relative_url }}">What I Wish I Had</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        &copy; {{ 'now' | date: "%Y" }} Carlos Espejo &middot;
+        <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

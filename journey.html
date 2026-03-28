@@ -1,0 +1,266 @@
+---
+layout: default
+title: My Journey
+---
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+.journey {
+  --amber:    #c97d0a;
+  --dark:     #1c1c1c;
+  --muted:    #7a7a7a;
+  --border:   #e0dbd2;
+  --code-bg:  #f0ece4;
+  --green:    #2d7a3a;
+  --blue:     #1a6080;
+}
+
+/* ── Header ── */
+.journey-header {
+  margin-bottom: 1rem;
+}
+
+.journey-header p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Timeline ── */
+.timeline {
+  position: relative;
+  padding-left: 1.75rem;
+}
+
+/* one continuous line through everything */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+/* ── Entry ── */
+.tl-entry {
+  position: relative;
+  padding-bottom: 1.1rem;
+}
+
+.tl-entry:last-child {
+  padding-bottom: 0;
+}
+
+/* dot on the line */
+.tl-entry::before {
+  content: '';
+  position: absolute;
+  left: -1.75rem;
+  top: 0.55rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  border: 2px solid #faf7f2;
+  z-index: 1;
+}
+
+.tl-entry.key::before {
+  background: var(--amber);
+  width: 10px;
+  height: 10px;
+  left: calc(-1.75rem - 1px);
+  box-shadow: 0 0 0 3px rgba(201,125,10,0.15);
+}
+
+/* ── Tag line ── */
+.tl-tag {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tl-tag::before {
+  content: '>';
+  color: var(--amber);
+}
+
+/* ── Title ── */
+.tl-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 0.3rem;
+  line-height: 1.3;
+}
+
+/* ── Description ── */
+.tl-desc {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0 0 0.45rem;
+}
+
+/* ── Badge ── */
+.tl-badge {
+  display: inline-block;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  padding: 0.2em 0.55em;
+  border-radius: 3px;
+}
+
+.badge-ok     { background: rgba(45,122,58,0.08);  color: var(--green); border: 1px solid rgba(45,122,58,0.2); }
+.badge-spark  { background: rgba(255,180,0,0.1);   color: #9a6800;      border: 1px solid rgba(255,180,0,0.3); }
+.badge-rank   { background: rgba(26,96,128,0.08);  color: var(--blue);  border: 1px solid rgba(26,96,128,0.2); }
+.badge-unlock { background: rgba(201,125,10,0.08); color: var(--amber); border: 1px solid rgba(201,125,10,0.25); }
+
+/* ── Section labels — anchored to the line ── */
+.tl-section {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.62rem;
+  color: rgba(122,122,122,0.55);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 0.6rem;
+  padding: 0;
+  position: relative;
+}
+
+/* small dash on the line for section labels */
+.tl-section::before {
+  content: '';
+  position: absolute;
+  left: -1.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 2px;
+  background: var(--border);
+}
+
+@media (max-width: 600px) {
+  .timeline { padding-left: 1.25rem; }
+  .timeline::before { left: 0; }
+  .tl-entry::before { left: -1.25rem; }
+  .tl-entry.key::before { left: calc(-1.25rem - 1px); }
+  .tl-section::before { left: -1.25rem; }
+  .tl-title { font-size: 0.95rem; }
+}
+</style>
+
+<div class="journey">
+
+  <div class="journey-header">
+    <p>From Santiago to Silicon Alley, a first-gen kid's path through Brooklyn, college, and a career in tech.</p>
+  </div>
+
+  <div class="timeline">
+
+    <div class="tl-entry key">
+      <div class="tl-tag">origin &middot; 1983</div>
+      <h3 class="tl-title">Santiago, Dominican Republic</h3>
+      <p class="tl-desc">Born and raised on the island. Grew up resourceful. You figure things out when you have to.</p>
+      <span class="tl-badge badge-ok">ROOTS ✓</span>
+    </div>
+
+    <div class="tl-entry">
+      <div class="tl-tag">relocate &middot; 1985</div>
+      <h3 class="tl-title">Sunset Park, Brooklyn</h3>
+      <p class="tl-desc">Moved to New York, settling in one of Brooklyn's most vibrant immigrant neighborhoods. The kind of place that teaches you to hustle.</p>
+      <span class="tl-badge badge-ok">NYC ✓</span>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="tl-section">// getting started</div>
+
+    <div class="tl-entry">
+      <div class="tl-tag">internship &middot; spring 2005</div>
+      <h3 class="tl-title">Human Resource Administration</h3>
+      <p class="tl-desc">Supported 3 on-site software engineers by logging user-reported issues and deploying system patches to computers across New York City.</p>
+    </div>
+
+    <div class="tl-entry">
+      <div class="tl-tag">education &middot; 2001–2005</div>
+      <h3 class="tl-title">John Jay College of Criminal Justice</h3>
+      <p class="tl-desc">First-gen college graduate with a B.S. in Computer Information Systems. Graduated Cum Laude with Dean's List honors.</p>
+      <span class="tl-badge badge-rank">CIS · CUM LAUDE</span>
+    </div>
+
+    <div class="tl-entry key">
+      <div class="tl-tag">internship &middot; 2005–2006 &middot; the spark</div>
+      <h3 class="tl-title">Department of Health</h3>
+      <p class="tl-desc">Got hands-on experience building with VB.NET, ASP.NET, and SQL. The first time writing real code for a real system. That was it.</p>
+      <span class="tl-badge badge-spark">⚡ CAREER PIVOT DETECTED</span>
+    </div>
+
+    <!-- CAREER -->
+    <div class="tl-section">// career</div>
+
+    <div class="tl-entry">
+      <div class="tl-tag">first role &middot; 2006–2009</div>
+      <h3 class="tl-title">Software Engineer, Verified Person</h3>
+      <p class="tl-desc">Built HR-XML integrations, rewrote a legacy VB.NET app to C# on .NET 2.0, and created utilities that cut data processing time from over an hour to seconds.</p>
+      <span class="tl-badge badge-ok">SHIPPED ✓</span>
+    </div>
+
+    <div class="tl-entry">
+      <div class="tl-tag">senior &middot; 2009–2014</div>
+      <h3 class="tl-title">Senior Software Engineer, Professional Examination Service</h3>
+      <p class="tl-desc">Built ProExam Write, a Rails SaaS platform for high-stakes certification exams. Migrated from SQL Server to PostgreSQL, created the open_xml Ruby gem, implemented real-time field-level encryption, and cut survey processing from 8 hours to 49 minutes.</p>
+      <span class="tl-badge badge-rank">▲ RANK UP</span>
+    </div>
+
+    <div class="tl-entry">
+      <div class="tl-tag">concurrent &middot; 2014–2017</div>
+      <h3 class="tl-title">Senior Software Engineer, CARMA</h3>
+      <p class="tl-desc">Managed AWS infrastructure for a Lucene-based NLP pipeline. Built a Sidekiq-powered newsletter system delivering 5,000 articles to 13,000 recipients in under 5 minutes.</p>
+      <span class="tl-badge badge-ok">SHIPPED ✓</span>
+    </div>
+
+    <div class="tl-entry key">
+      <div class="tl-tag">concurrent &middot; 2014–2020</div>
+      <h3 class="tl-title">VP of Big Data Infrastructure, Accern</h3>
+      <p class="tl-desc">Moved from application code to owning all infrastructure. Built and scaled the data platform from MVP through Series A across AWS, GCP, Azure, and DigitalOcean. Saved $60K in compute with a custom GCP Scaler API and built "BB8," a Slack bot for on-demand deployments.</p>
+      <span class="tl-badge badge-spark">⚡ PIVOT ENGAGED</span>
+    </div>
+
+    <div class="tl-entry">
+      <div class="tl-tag">senior &middot; 2020</div>
+      <h3 class="tl-title">Senior Cloud Engineer, Allied World</h3>
+      <p class="tl-desc">Modernized engineering practices by building cloud-native IaC tooling with Terragrunt/Terraform. Created a custom CI/CD CodePipeline module that saved thousands of manual person-hours by automating plan on PR open and apply on merge.</p>
+      <span class="tl-badge badge-ok">SHIPPED ✓</span>
+    </div>
+
+    <div class="tl-entry">
+      <div class="tl-tag">promoted &middot; 2023</div>
+      <h3 class="tl-title">Lead Cloud Engineer, Allied World</h3>
+      <p class="tl-desc">Built and led a distributed cloud engineering team. Replaced AWS-only CI/CD with a Unified DevOps Framework powered by GitHub Actions, adopted company-wide. Achieved a 5x productivity increase over individual contributions.</p>
+      <span class="tl-badge badge-rank">▲ RANK UP</span>
+    </div>
+
+    <!-- NOW -->
+    <div class="tl-section">// now</div>
+
+    <div class="tl-entry key">
+      <div class="tl-tag">unlocked &middot; 2026</div>
+      <h3 class="tl-title">Agentic DevOps Engineering</h3>
+      <p class="tl-desc">Building at the intersection of AI agents and DevOps. Agentic workflows, LLMs, and the next generation of intelligent infrastructure.</p>
+      <span class="tl-badge badge-unlock">UNLOCKED ✓</span>
+    </div>
+
+  </div>
+
+</div>

@@ -2,12 +2,27 @@
 layout: default
 ---
 
-<h3>Posts</h3>
-<ul>
+<div class="home-intro">
+  <p>Engineering leader with roots in Santiago and Brooklyn. I've shipped Rails platforms, scaled big data pipelines from MVP through Series A, and built the cloud infrastructure behind enterprise teams. This site is the roadmap I wish I had.</p>
+</div>
+
+<div class="home-links">
+  <a href="{{ '/journey' | relative_url }}" class="home-link">
+    <span class="home-link-title">My Journey</span>
+    <span class="home-link-desc">From first-gen college student to tech professional</span>
+  </a>
+  <a href="{{ '/list' | relative_url }}" class="home-link">
+    <span class="home-link-title">What I Wish I Had</span>
+    <span class="home-link-desc">Resources, books, and tools I would have given my younger self</span>
+  </a>
+</div>
+
+<h2 class="post-list-heading">Posts</h2>
+<ul class="post-list">
   {% for post in site.posts %}
   <li>
-    <span>{{ post.date | date: "%b %-d, %Y" }}</span> &mdash;
-    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
   </li>
   {% endfor %}
 </ul>
