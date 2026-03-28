@@ -1,0 +1,349 @@
+---
+layout: default
+title: What I Wish I Had
+---
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+.wishlist {
+  --amber:    #c97d0a;
+  --dark:     #1c1c1c;
+  --muted:    #7a7a7a;
+  --border:   #e0dbd2;
+  --code-bg:  #f0ece4;
+  --green:    #2d7a3a;
+  --blue:     #1a6080;
+}
+
+/* ── Header ── */
+.wishlist-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.wishlist-header h1 {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.5rem;
+  margin: 0 0 0.35rem;
+}
+
+.wishlist-header p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Category ── */
+.wl-category {
+  margin-bottom: 2.5rem;
+}
+
+.wl-category-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--amber);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.wl-category-label::before {
+  content: '>';
+  color: var(--muted);
+}
+
+/* ── Item list ── */
+.wl-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wl-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(224, 219, 210, 0.5);
+  margin: 0;
+}
+
+.wl-item:last-child {
+  border-bottom: none;
+}
+
+/* bullet dot */
+.wl-item::before {
+  content: '';
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border);
+  margin-top: 0.55rem;
+}
+
+.wl-item.highlight::before {
+  background: var(--amber);
+  box-shadow: 0 0 0 3px rgba(201,125,10,0.12);
+}
+
+.wl-item-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.wl-item-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.wl-item-title a {
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.wl-item-title a:hover {
+  color: var(--amber);
+}
+
+.wl-item-meta {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-top: 0.15rem;
+}
+
+.wl-item-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: 0.25rem;
+}
+
+/* ── Badges ── */
+.wl-badge {
+  display: inline-block;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  padding: 0.15em 0.5em;
+  border-radius: 3px;
+  margin-top: 0.3rem;
+}
+
+.badge-fav       { background: rgba(255,180,0,0.1);   color: #9a6800;      border: 1px solid rgba(255,180,0,0.3); }
+.badge-active    { background: rgba(201,125,10,0.08); color: var(--amber); border: 1px solid rgba(201,125,10,0.25); }
+.badge-complete  { background: rgba(45,122,58,0.08);  color: var(--green); border: 1px solid rgba(45,122,58,0.2); }
+.badge-reread    { background: rgba(122,122,122,0.08); color: var(--muted); border: 1px solid rgba(122,122,122,0.2); }
+
+/* ── Format badge (book/audiobook) ── */
+.wl-format {
+  display: inline-block;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.1em 0.4em;
+  border-radius: 2px;
+  background: var(--code-bg);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  margin-left: 0.4rem;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+/* ── Category dots ── */
+.wl-dots {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.wl-dots span {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .wl-item { gap: 0.5rem; }
+  .wl-item-title { font-size: 0.9rem; }
+}
+</style>
+
+<div class="wishlist">
+
+  <div class="wishlist-header">
+    <h1>What I Wish I Had</h1>
+    <p>Resources, books, and tools I would have given my younger self. Everything here shaped how I think about engineering, leadership, and building things that matter.</p>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- BOOKS / AUDIOBOOKS                          -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="wl-category">
+    <h2 class="wl-category-label">books <span class="wl-dots"><span></span><span></span><span></span><span></span><span></span></span></h2>
+    <ul class="wl-items">
+
+      <li class="wl-item highlight">
+        <div class="wl-item-body">
+          <p class="wl-item-title"><a href="https://www.amazon.com/I-Will-Teach-You-to-Be-Rich-audiobook/dp/B07QR7GYF7/ref=tmm_aud_swatch_0" target="_blank" rel="noopener">I Will Teach You to Be Rich</a></p>
+          <div class="wl-item-meta">Ramit Sethi</div>
+          <p class="wl-item-desc">The money playbook nobody teaches you. Automation, conscious spending, and building a Rich Life on your terms.</p>
+          <span class="wl-badge badge-complete">COMPLETED</span> <span class="wl-badge badge-fav">⚡ GAME CHANGER</span>
+        </div>
+      </li>
+
+      <li class="wl-item">
+        <div class="wl-item-body">
+          <p class="wl-item-title"><a href="https://www.amazon.com/The-Phoenix-Project-audiobook/dp/B00VATFAMI/" target="_blank" rel="noopener">The Phoenix Project</a></p>
+          <div class="wl-item-meta">Gene Kim, Kevin Behr, George Spafford</div>
+          <p class="wl-item-desc">A novel about DevOps that reads like a thriller. Changed how I think about bottlenecks and flow.</p>
+          <span class="wl-badge badge-complete">COMPLETED</span>
+        </div>
+      </li>
+
+      <li class="wl-item">
+        <div class="wl-item-body">
+          <p class="wl-item-title"><a href="https://www.amazon.com/The-Managers-Path-audiobook/dp/B07SV4VDWC/" target="_blank" rel="noopener">The Manager's Path</a></p>
+          <div class="wl-item-meta">Camille Fournier</div>
+          <p class="wl-item-desc">The engineering leadership manual. From tech lead to VP, every level mapped out.</p>
+          <span class="wl-badge badge-complete">COMPLETED</span>
+        </div>
+      </li>
+
+      <li class="wl-item">
+        <div class="wl-item-body">
+          <p class="wl-item-title"><a href="https://www.terraformupandrunning.com" target="_blank" rel="noopener">Terraform: Up &amp; Running</a></p>
+          <div class="wl-item-meta">Yevgeniy Brikman</div>
+          <p class="wl-item-desc">The Terraform bible. Writing, planning, and managing infrastructure as code at scale.</p>
+          <span class="wl-badge badge-complete">COMPLETED</span>
+        </div>
+      </li>
+
+      <li class="wl-item">
+        <div class="wl-item-body">
+          <p class="wl-item-title"><a href="https://www.amazon.com/Atomic-Habits-James-Clear-audiobook/dp/B07RFSSYBH/" target="_blank" rel="noopener">Atomic Habits</a></p>
+          <div class="wl-item-meta">James Clear</div>
+          <p class="wl-item-desc">Small systems beat big motivation. The compound effect applied to daily habits.</p>
+          <span class="wl-badge badge-active">READING</span>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- TRAINING PLATFORMS                          -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="wl-category">
+    <h2 class="wl-category-label">training platforms <span class="wl-dots"><span></span><span></span></span></h2>
+    <ul class="wl-items">
+
+      <li class="wl-item highlight">
+        <div class="wl-item-body">
+          <p class="wl-item-title"><a href="https://www.bretfisher.com/theguild" target="_blank" rel="noopener">Agentic DevOps Guild by Bret Fisher</a></p>
+          <div class="wl-item-meta">ai &middot; devops &middot; ci/cd &middot; membership</div>
+          <p class="wl-item-desc">Courses, workshops, and recurring meetups focused on AI-assisted CI/CD, infrastructure automation, and safely enabling AI-assisted DevOps work.</p>
+          <span class="wl-badge badge-active">ACTIVE</span>
+        </div>
+      </li>
+
+      <li class="wl-item">
+        <div class="wl-item-body">
+          <p class="wl-item-title">Udemy</p>
+          <div class="wl-item-meta">general &middot; tech &middot; on-demand</div>
+          <p class="wl-item-desc">Huge catalog, low cost. Great for picking up new tech fast when you need a structured walkthrough.</p>
+          <span class="wl-badge badge-active">ACTIVE</span>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- COURSES I TOOK                              -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="wl-category">
+    <h2 class="wl-category-label">courses I took <span class="wl-dots"><span></span><span></span></span></h2>
+    <ul class="wl-items">
+
+      <li class="wl-item">
+        <div class="wl-item-body">
+          <p class="wl-item-title"><a href="https://www.udemy.com/course/docker-mastery/" target="_blank" rel="noopener">Docker Mastery: with Kubernetes + Swarm from a Docker Captain</a></p>
+          <div class="wl-item-meta">Udemy &middot; completed</div>
+          <p class="wl-item-desc">The definitive Docker course. Covers containers, Compose, Swarm, and Kubernetes from a Docker Captain.</p>
+          <span class="wl-badge badge-complete">COMPLETED</span>
+        </div>
+      </li>
+
+      <li class="wl-item">
+        <div class="wl-item-body">
+          <p class="wl-item-title"><a href="https://bret.courses/swarmmastery" target="_blank" rel="noopener">Swarm Mastery</a></p>
+          <div class="wl-item-meta">Bret Fisher &middot; completed</div>
+          <p class="wl-item-desc">Deep dive into Docker Swarm orchestration, production deployments, and cluster management.</p>
+          <span class="wl-badge badge-complete">COMPLETED</span>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- CURRENTLY TAKING                            -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="wl-category">
+    <h2 class="wl-category-label">currently taking <span class="wl-dots"><span></span><span></span><span></span></span></h2>
+    <ul class="wl-items">
+
+      <li class="wl-item highlight">
+        <div class="wl-item-body">
+          <p class="wl-item-title"><a href="https://www.bretfisher.com/courses" target="_blank" rel="noopener">GitHub Actions for DevOps, in the Age of AI</a></p>
+          <div class="wl-item-meta">Bret Fisher &middot; in progress</div>
+          <p class="wl-item-desc">CI/CD pipelines with GitHub Actions through the lens of modern AI-assisted DevOps practices.</p>
+          <span class="wl-badge badge-active">IN PROGRESS</span>
+        </div>
+      </li>
+
+      <li class="wl-item">
+        <div class="wl-item-body">
+          <p class="wl-item-title"><a href="https://www.aihero.dev/cohorts/claude-code-for-real-engineers-2026-04" target="_blank" rel="noopener">Claude Code for Real Engineers</a></p>
+          <div class="wl-item-meta">AI Hero &middot; cohort &middot; April 2026</div>
+          <p class="wl-item-desc">Hands-on cohort course on using Claude Code effectively for real-world engineering workflows.</p>
+          <span class="wl-badge badge-active">IN PROGRESS</span>
+        </div>
+      </li>
+
+      <li class="wl-item">
+        <div class="wl-item-body">
+          <p class="wl-item-title"><a href="https://bret.courses/kubernetesmastery" target="_blank" rel="noopener">Kubernetes Mastery</a></p>
+          <div class="wl-item-meta">Bret Fisher &middot; in progress</div>
+          <p class="wl-item-desc">Hands-on Kubernetes from the basics to production. Deployments, services, volumes, and real-world orchestration.</p>
+          <span class="wl-badge badge-active">IN PROGRESS</span>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+</div>
