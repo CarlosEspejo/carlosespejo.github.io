@@ -16,7 +16,7 @@ $code-bg:   #f0ece4;
 $font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 $font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 
-$max-width: 680px;
+$max-width: 800px;
 
 /* ============================================================
    Reset & Base
@@ -163,7 +163,7 @@ main.container {
   transition: background 0.15s;
 
   &:hover {
-    background: darken($code-bg, 3%);
+    background: #e7e2d7;
   }
 
   .home-link-title {
@@ -209,7 +209,7 @@ main.container {
    ============================================================ */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-sans;
+  font-family: $font-mono;
   font-weight: 700;
   line-height: 1.3;
   margin-top: 2rem;
